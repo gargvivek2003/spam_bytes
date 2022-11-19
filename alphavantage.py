@@ -1,6 +1,5 @@
-#code to fetch stock market information
 import wget
-location = 'D:\JIIT MATERIAL\3rd Sem\Hackathon'
+location = 'C:\\Users\\gargv\\OneDrive\\Desktop'
 
 # todo Time Series
 
@@ -136,4 +135,3 @@ def cryptoRating(symbol):
     url = 'https://www.alphavantage.co/query?function=CRYPTO_RATING' + \
         '&symbol=' + symbol + '&apikey=' + apikey
     wget.download(url, location)
-
