@@ -11,7 +11,7 @@ import wget
 
 app = Dash(__name__)
 
-apikey = 'EPXURL4BRANU0TF4'
+apikey = 'YOUR API KEY'
 location = '/Users/adity/Desktop/hackathon'
 
 def dailyAdj(symbol, outputsize="compact", datatype="csv"):
