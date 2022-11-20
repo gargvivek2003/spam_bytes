@@ -3,7 +3,7 @@ import plotly.express as px
 from dash import Dash, html, dcc
 import pandas as pd
 
-
+api_key="YOUR API KEY"
 
 def intra_day():
     url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=' + api_key
@@ -35,11 +35,11 @@ def wma(data):
 
     # see https://plotly.com/python/px-arguments/ for more options
     df = pd.DataFrame({
-        "Date": list(dic.keys()),
-        "Values": list(dic.values()),
+        "Date": list(dic.keys())[0:1],
+        "Values": (list(dic.values()))[0:1],
     })
 
-    fig = px.scatter(df, x="Date", y="Values")
+    fig = px.line(df, x="Date", y="Values")
     app.layout = html.Div(children=[
         html.H1(children='Hello Dash'),
 
@@ -61,4 +61,5 @@ def news(symbol):
     data = r.json()
     print(data)
 
+#str1=str(input("Enter the symbol of the company : "))
 weekly("IBM")
